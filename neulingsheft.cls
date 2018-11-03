@@ -35,6 +35,8 @@
 %===Special Layout==%
 %\RequirePackage{tabularx} % tables with same width column
 %\RequirePackage{ragged2e} % Improved ragged layout
+%==Pictures in Paragraphs==%
+% https://ctan.org/topic/text-flow
 
 %===Media===%
 %==Graphics==%
