@@ -35,17 +35,29 @@
 %===Special Layout==%
 %\RequirePackage{tabularx} % tables with same width column
 %\RequirePackage{ragged2e} % Improved ragged layout
-%==Pictures in Paragraphs==%
-% https://ctan.org/topic/text-flow
 
 %===Media===%
 %==Graphics==%
 %\RequirePackage{tikz} % Create cool graphics in TeX directly.
-%\RequirePackage{graphicx} % Include and work with graphics.
+\RequirePackage{graphicx} % Include and work with graphics.
 %==Code Listings==%
 %\RequirePackage{listings}
 %==Color==%
 %\usepackage[svgnames]{xcolor} % Use colors, including some color names.
+
+%===Neulingsheft Specials===%
+%==Handzeichen==%
+\newenvironment{handzeichen}[2]{% Name, Bild
+	\def\handzeichen@img{#2}%
+	\section*{#1}%
+	\begin{minipage}[t]{.7\linewidth}%
+}{%
+	\end{minipage}%
+	\mbox{\vbox to 0pt{%
+	\includegraphics[width=.3\linewidth]{img/\handzeichen@img}%
+	\vfill
+	}}
+}
 
 %===Stop happy hacking===%
 \makeatother
