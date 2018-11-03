@@ -10,8 +10,8 @@
 \RequirePackage[ngerman]{babel}
 % Names and hyphenation rules for German.
 % UTF-8 encoding (not necessary for LuaTeX)
-%\RequirePackage[utf8]{inputenc} % Allow input of arbitrary characters.
-%\RequirePackage[T1]{fontenc} % Allow hyphenation in words with non-ASCII characters
+\RequirePackage[utf8x]{inputenc} % Allow input of arbitrary characters.
+\RequirePackage[T1]{fontenc} % Allow hyphenation in words with non-ASCII characters
 \RequirePackage{microtype} % Improved typography, removes some overfull \hboxes.
 \RequirePackage{hyperref} % Adds links and bookmarks to PDF.
 
@@ -47,14 +47,16 @@
 
 %===Neulingsheft Specials===%
 %==Handzeichen==%
+\graphicspath{{img/}}
 \newenvironment{handzeichen}[2]{% Name, Bild
 	\def\handzeichen@img{#2}%
-	\section*{#1}%
+	\noindent
 	\begin{minipage}[t]{.7\linewidth}%
+	\section*{#1}%
 }{%
 	\end{minipage}%
 	\mbox{\vbox to 0pt{%
-	\includegraphics[width=.3\linewidth]{img/\handzeichen@img}%
+	\includegraphics[width=.3\linewidth]{\handzeichen@img}%
 	\vfill
 	}}
 }
