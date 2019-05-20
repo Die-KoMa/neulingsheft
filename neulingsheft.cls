@@ -14,7 +14,7 @@
 \RequirePackage[T1]{fontenc} % Allow hyphenation in words with non-ASCII characters
 \RequirePackage{microtype} % Improved typography, removes some overfull \hboxes.
 \RequirePackage{hyperref} % Adds links and bookmarks to PDF.
-
+\RequirePackage{csquotes} % allow enquote instead of unicode
 %===Start happy hacking===%
 \makeatletter
 
