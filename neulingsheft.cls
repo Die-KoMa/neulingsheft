@@ -11,7 +11,7 @@
 % Names and hyphenation rules for German.
 % UTF-8 encoding (not necessary for LuaTeX)
 \RequirePackage[utf8x]{inputenc} % Allow input of arbitrary characters.
-\RequirePackage[T1]{fontenc} % Allow hyphenation in words with non-ASCII characters
+%\RequirePackage[T1]{fontenc} % Allow hyphenation in words with non-ASCII characters
 \RequirePackage{microtype} % Improved typography, removes some overfull \hboxes.
 \RequirePackage{hyperref} % Adds links and bookmarks to PDF.
 \RequirePackage{csquotes} % allow enquote instead of unicode
