@@ -10,12 +10,15 @@
 \RequirePackage[ngerman]{babel}
 % Names and hyphenation rules for German.
 % UTF-8 encoding (not necessary for LuaTeX)
-\RequirePackage[utf8x]{inputenc} % Allow input of arbitrary characters.
+\RequirePackage[utf8]{inputenc} % Allow input of arbitrary characters.
 %\RequirePackage[T1]{fontenc} % Allow hyphenation in words with non-ASCII characters
 \RequirePackage{microtype} % Improved typography, removes some overfull \hboxes.
 \RequirePackage{hyperref} % Adds links and bookmarks to PDF.
 \RequirePackage{csquotes} % allow enquote instead of unicode
-%===Start happy hacking===%
+
+% reproducible documents
+\pdftrailerid{}
+% ===Start happy hacking===%
 \makeatletter
 
 %===Document Metadata===%
@@ -45,7 +48,7 @@
 % it is actually available (ie. in pdftex >=1.40.15).  Especially luatex does
 % not have this problem at all (and thus no option to suppress the warnings).
 \ifdefined\pdfsuppresswarningpagegroup
-	\pdfsuppresswarningpagegroup=1
+    \pdfsuppresswarningpagegroup=1
 \fi
 %==Code Listings==%
 %\RequirePackage{listings}
@@ -61,18 +64,18 @@
 % .05\linewidth setzt es das Bild (oben bündig mit der Überschrift) in einem
 % .25\linewidth breiten Bereich zentriert mit einer Breite von #1.
 \newenvironment{handzeichen}[3][.25\linewidth]{% [Bildbreite], Name, Bild
-	\def\handzeichen@width{#1}%
-	\def\handzeichen@img{#3}%
-	\noindent
-	\begin{minipage}[t]{.7\linewidth}%
-	\section*{#2}%
+    \def\handzeichen@width{#1}%
+    \def\handzeichen@img{#3}%
+    \noindent
+    \begin{minipage}[t]{.7\linewidth}%
+    \section*{#2}%
 }{%
-	\end{minipage}%
-	\hspace{.05\linewidth}%
-	\makebox[.25\linewidth]{\raisebox{-\height}{%
-		\includegraphics[width=\handzeichen@width]{\handzeichen@img}%
-	}}%
-	\medskip
+    \end{minipage}%
+    \hspace{.05\linewidth}%
+    \makebox[.25\linewidth]{\raisebox{-\height}{%
+        \includegraphics[width=\handzeichen@width]{\handzeichen@img}%
+    }}%
+    \medskip
 }
 
 %===Stop happy hacking===%
